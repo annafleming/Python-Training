@@ -1,0 +1,5 @@
+/.idea
+/data
+.ds_store
+__pycache__/
+*.py[cod]
