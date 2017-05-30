@@ -18,3 +18,15 @@
 * frozenset - immutable form of _set_ class
    - enables to have a set of frozensets
 * dict - associative mapping (aka dictionary)
+
+## Equality Operators
+
+* __is / is not__ - Identity operators (True if refer to the same object)
+* __== / !=__ - Equivalent / Not Equivalent
+
+## Sequence Operators
+* s[j], s[start:stop], s[start:stop:step]
+* s[start:stop] 
+* s[start:stop:step]
+* s+t, k*s 
+* val in s (can also be used for Strings)
