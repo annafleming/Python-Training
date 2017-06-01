@@ -30,3 +30,14 @@
 * s[start:stop:step]
 * s+t, k*s 
 * val in s (can also be used for Strings)
+
+## Iterators and Generators
+* iterator
+     * i = iter(data); next(i)
+* generator
+    ``` python
+    def factors(n):
+        for k in range(1,n+1):
+            if n % k == 0: 
+                yield k
+    ```
