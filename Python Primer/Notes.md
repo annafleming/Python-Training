@@ -2,13 +2,13 @@
 
 * bool
 * int
-   - int( 7f , 16) evaluates to the integer 127
+   - `int( 7f , 16)` evaluates to the integer 127
 * float 
    - 6.022e23 represents the mathematical value 6.022 × 1023 
 * list - mutable sequence of objects []
-   - list( 'hello' ) produces a list of individual characters
+   - `list( 'hello' )` produces a list of individual characters
 * tuple - immutable sequence of objects ()
-   - (17,) is a one-element tuple
+   - `(17,)` is a one-element tuple
 * str - character string
    - supports using the delimiter ''' or """ to begin and end a string literal
 * set - unordered set of distinct objects {}
@@ -29,7 +29,7 @@
 * s[start:stop] 
 * s[start:stop:step]
 * s+t, k*s 
-* val in s (can also be used for Strings)
+* `val in s` (can also be used for Strings)
 
 ## Iterators and Generators
 * iterator
@@ -41,3 +41,28 @@
             if n % k == 0: 
                 yield k
     ```
+    
+    
+## Additional Python Conveniences
+    
+* Conditional Expressions
+    ``` python
+        param = n if n >= 0 else −n
+    ```
+    
+* List comprehensions
+    * list comprehension `[ k k for k in range(1, n+1) ]`
+    * set comprehension `{ k k for k in range(1, n+1) }`
+    * generator comprehension `( k k for k in range(1, n+1) )`
+    * dictionary comprehension `{ k : k k for k in range(1, n+1) }`
+
+* Packing
+    * `data = 2, 4, 6, 8` - results in tuple `(2, 4, 6, 8)`
+
+* Unpacking
+    * `a, b, c, d = range(7, 11)`
+
+* Simultaneous Assignments
+    * `x, y, z = 6, 2, 5`
+    * Swapping the values `j, k = k, j`
+
