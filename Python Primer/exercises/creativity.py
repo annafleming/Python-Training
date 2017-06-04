@@ -1,4 +1,6 @@
 from random import randint
+import string
+import re
 
 def reverse_list(list_of_ints):
     return [list_of_ints[len(list_of_ints) - i - 1] for i in range(len(list_of_ints))]
@@ -45,4 +47,8 @@ def count_vowels(text):
         if letter in vowel:
             count += 1
     return count
+
+
+def remove_punctuation(sentence):
+    return re.sub('['+str(string.punctuation)+']', '', sentence)
 

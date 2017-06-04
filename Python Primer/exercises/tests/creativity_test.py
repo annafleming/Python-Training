@@ -50,5 +50,8 @@ class CreativityExercisesTestCase(unittest.TestCase):
     def test_should_count_vowels(self):
         self.assertEqual(creativity.count_vowels('alba'), 2)
 
+    def test_should_remove_punctuation(self):
+        self.assertEqual(creativity.remove_punctuation("Let's try, Mike."), "Lets try Mike")
+
 if __name__ == '__main__':
     unittest.main()
