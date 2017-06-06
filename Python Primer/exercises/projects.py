@@ -1,3 +1,4 @@
+from random import randint
 
 def make_change(charged, given):
     bills = [100, 50, 20, 10, 5, 1]
@@ -25,3 +26,9 @@ def _change_generator(charged, given):
         while left >= bill:
             yield bill
             left -= bill
+
+
+def get_one_birthday_count(count):
+    birthdays = [randint(1, 266) for i in range(count)]
+    unique_birthdays = list(set(birthdays))
+    return count - len(unique_birthdays)
