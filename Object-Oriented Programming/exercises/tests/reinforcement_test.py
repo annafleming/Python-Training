@@ -25,5 +25,13 @@ class ReinforcementExercisesTestCase(unittest.TestCase):
             cc.make_payment(-49)
         self.assertEqual(str(error.exception), 'Payment amount cannot be negative')
 
+    def test_should_set_balace_to_zero_if_not_passed(self):
+        cc = CreditCard('JohnDoe', '1st Bank', 5391037593875309, 1000)
+        self.assertEqual(cc.get_balance(), 0)
+
+    def test_should_set_balace_value_if_passes(self):
+        cc = CreditCard('JohnDoe', '1st Bank', 5391037593875309, 1000, 50)
+        self.assertEqual(cc.get_balance(), 50)
+        
 if __name__ == '__main__':
     unittest.main()
