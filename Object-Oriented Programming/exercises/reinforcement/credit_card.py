@@ -26,7 +26,8 @@ class CreditCard:
             amount = float(amount)
         except:
             raise Exception('Paid amount should be a number')
-
+        if amount < 0:
+            raise ValueError('Payment amount cannot be negative')
         self._balance -= amount
 
     def charge(self, price):

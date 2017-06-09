@@ -18,5 +18,12 @@ class ReinforcementExercisesTestCase(unittest.TestCase):
         with self.assertRaises(Exception) as error:
             cc.charge('dddd')
         self.assertEqual(str(error.exception), 'Charged amount should be a number')
+
+    def test_should_raise_error_if_negative_payment_sent(self):
+        cc = CreditCard('JohnDoe', '1st Bank', 5391037593875309, 1000)
+        with self.assertRaises(ValueError) as error:
+            cc.make_payment(-49)
+        self.assertEqual(str(error.exception), 'Payment amount cannot be negative')
+
 if __name__ == '__main__':
     unittest.main()
