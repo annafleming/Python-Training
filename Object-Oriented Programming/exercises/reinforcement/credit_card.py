@@ -22,6 +22,11 @@ class CreditCard:
         return self._balance
 
     def make_payment(self, amount):
+        try:
+            amount = float(amount)
+        except:
+            raise Exception('Paid amount should be a number')
+
         self._balance -= amount
 
     def charge(self, price):
@@ -29,7 +34,7 @@ class CreditCard:
             price = float(price)
         except:
             raise Exception('Charged amount should be a number')
-        
+
         if price + self._balance > self._limit:
             return False
         else:
