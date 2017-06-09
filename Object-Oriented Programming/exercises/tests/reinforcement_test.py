@@ -1,6 +1,7 @@
 import unittest
 from ..reinforcement.flower import Flower
 from ..reinforcement.credit_card import CreditCard
+from ..reinforcement.vector import Vector
 
 class ReinforcementExercisesTestCase(unittest.TestCase):
 
@@ -32,6 +33,34 @@ class ReinforcementExercisesTestCase(unittest.TestCase):
     def test_should_set_balace_value_if_passes(self):
         cc = CreditCard('JohnDoe', '1st Bank', 5391037593875309, 1000, 50)
         self.assertEqual(cc.get_balance(), 50)
-        
+
+    def test_should_subtract_two_vectors(self):
+        v = Vector(4)
+        v[0] = 10
+        u = Vector(4)
+        u[0] = 3
+        expected_v = Vector(4)
+        expected_v[0] = 7
+        self.assertEqual(v-u, expected_v)
+
+    def test_should_negate_vector_coords(self):
+        v = Vector(4)
+        v[0] = 10
+        expected_v = Vector(4)
+        expected_v[0] = -10
+        self.assertEqual(-v, expected_v)
+
+    def test_should_multiply_vector_by_scalar(self):
+        v = Vector(3)
+        v[0] = 1
+        v[1] = 2
+        v[2] = 3
+        expected_v = Vector(3)
+        expected_v[0] = 3
+        expected_v[1] = 6
+        expected_v[2] = 9
+        self.assertEqual(v * 3, expected_v)
+
+    #next R-2.14
 if __name__ == '__main__':
     unittest.main()
