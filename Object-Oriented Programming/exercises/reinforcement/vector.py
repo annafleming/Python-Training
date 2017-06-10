@@ -1,6 +1,11 @@
+from collections import Iterable
+
 class Vector:
     def __init__(self, d):
-        self._coords = [0] * d
+        if isinstance(d, Iterable):
+            self._coords = list(d)
+        else:
+            self._coords = [0] * d
 
     def __len__(self):
         return len(self._coords)

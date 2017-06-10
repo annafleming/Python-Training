@@ -78,5 +78,13 @@ class ReinforcementExercisesTestCase(unittest.TestCase):
         self.assertEqual(v * u, expected_v)
         self.assertEqual(u * v, expected_v)
 
+    def test_should_instantiate_vector_when_given_sequence(self):
+        u = Vector([1, 2, 3])
+        v = Vector(3)
+        v[0] = 1
+        v[1] = 2
+        v[2] = 3
+        self.assertEqual(v, u)
+
 if __name__ == '__main__':
     unittest.main()
