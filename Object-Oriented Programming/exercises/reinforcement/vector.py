@@ -39,12 +39,20 @@ class Vector:
             self[j] = -self[j]
         return self
 
-    def __mul__(self, scalar):
-        for j in range(len(self)):
-            self[j] = self[j] * scalar
-        return self
+    def __mul__(self, value):
+        return self._multiply(value)
 
-    def __rmul__(self, scalar):
+    def __rmul__(self, value):
+        return self._multiply(value)
+
+    def _multiply(self, value):
+        if type(value) != Vector:
+            other = Vector(len(self))
+            for j in range(len(self)):
+                other[j] = value
+        else:
+            other = value
+        result = Vector(len(self))
         for j in range(len(self)):
-            self[j] = self[j] * scalar
-        return self
+            result[j] = self[j] * other[j]
+        return result

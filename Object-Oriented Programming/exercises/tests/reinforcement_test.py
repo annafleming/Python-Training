@@ -60,7 +60,23 @@ class ReinforcementExercisesTestCase(unittest.TestCase):
         expected_v[1] = 6
         expected_v[2] = 9
         self.assertEqual(v * 3, expected_v)
+        self.assertEqual(3 * v, expected_v)
 
-    #next R-2.14
+    def test_should_multiply_two_vectors(self):
+        v = Vector(3)
+        v[0] = 1
+        v[1] = 2
+        v[2] = 3
+        u = Vector(3)
+        u[0] = 2
+        u[1] = 2
+        u[2] = 2
+        expected_v = Vector(3)
+        expected_v[0] = 2
+        expected_v[1] = 4
+        expected_v[2] = 6
+        self.assertEqual(v * u, expected_v)
+        self.assertEqual(u * v, expected_v)
+
 if __name__ == '__main__':
     unittest.main()
