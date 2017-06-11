@@ -2,6 +2,7 @@ import unittest
 from ..reinforcement.flower import Flower
 from ..reinforcement.credit_card import CreditCard
 from ..reinforcement.vector import Vector
+from ..reinforcement.progression import FibonacciProgression
 
 class ReinforcementExercisesTestCase(unittest.TestCase):
 
@@ -85,6 +86,10 @@ class ReinforcementExercisesTestCase(unittest.TestCase):
         v[1] = 2
         v[2] = 3
         self.assertEqual(v, u)
+
+    def test_should_8th_item_in_fibonacci_progression(self):
+        progression = FibonacciProgression(2, 2)
+        self.assertEqual(42, progression.get_element_by_position(8))
 
 if __name__ == '__main__':
     unittest.main()

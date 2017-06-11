@@ -31,7 +31,7 @@ class ArithmeticProgression(Progression):
 
 class GeometricProgression(Progression):
     def __init__(self, base=2, start=1):
-        super().__init___(start)
+        super().__init__(start)
         self._base = base
 
     def advance(self):
@@ -40,8 +40,13 @@ class GeometricProgression(Progression):
 
 class FibonacciProgression(Progression):
     def __init__(self, first=0, second=1):
-        super().__init___(first)
+        super().__init__(first)
         self._prev = second - first
 
     def advance(self):
         self._prev, self._current = self._current, self._prev + self._current
+
+    def get_element_by_position(self, position):
+        for i in range(position-1):
+            self.advance()
+        return self._current
