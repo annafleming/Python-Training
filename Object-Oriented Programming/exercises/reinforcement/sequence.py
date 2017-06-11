@@ -31,3 +31,15 @@ class Sequence(metaclass=ABCMeta):
             if self[i] != other[i]:
                 return False
         return True
+
+    def __lt__(self, other):
+        min_length = len(self) if len(self) < len(other) else other
+        for i in range(min_length):
+            if self[i] < other[i]:
+                return True
+            elif self[i] > other[i]:
+                return False
+
+        return True if len(self) < len(other) else False
+
+
