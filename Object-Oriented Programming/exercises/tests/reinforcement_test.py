@@ -3,7 +3,7 @@ from ..reinforcement.flower import Flower
 from ..reinforcement.credit_card import CreditCard
 from ..reinforcement.vector import Vector
 from ..reinforcement.progression import FibonacciProgression
-
+from ..reinforcement.range import Range
 class ReinforcementExercisesTestCase(unittest.TestCase):
 
     def test_should_instantiate_class_flower_with_params(self):
@@ -91,5 +91,9 @@ class ReinforcementExercisesTestCase(unittest.TestCase):
         progression = FibonacciProgression(2, 2)
         self.assertEqual(42, progression.get_element_by_position(8))
 
+    def test_should_determin_where_the_value_lies_within_range(self):
+        r = Range(100, step=5)
+        self.assertTrue(25 in r)
+        self.assertFalse(6 in r)
 if __name__ == '__main__':
     unittest.main()
