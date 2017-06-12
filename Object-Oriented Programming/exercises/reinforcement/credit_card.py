@@ -41,3 +41,23 @@ class CreditCard:
         else:
             self._balance += price
             return True
+
+
+class PredatoryCreditCard(CreditCard):
+    def __init__(self, customer, bank, acnt, limit, apr):
+        super().__init__(customer, bank, acnt, limit)
+        self._apr = apr
+        self._total_charges = 0
+
+    def charge(self, price):
+        self._total_charges += 1
+        success = super().charge(price)
+        if not success:
+            self._balance += 5
+        return success
+
+    def process_month(self):
+        if self._balance > 0:
+            additional_charge = self._total_charges - 12 if self._total_charges > 12 else 0
+            monthly_factor = pow(1 + self._apr, 1 / 12) + additional_charge
+            self._balance = monthly_factor
