@@ -50,3 +50,15 @@ class FibonacciProgression(Progression):
         for i in range(position-1):
             self.advance()
         return self._current
+
+
+class DiffProgression(Progression):
+    def __init__(self, first, second):
+        super().__init__(second)
+        self._prev = first
+
+    def advance(self):
+        self._prev, self._current = self._current, abs(self._prev - self._current)
+
+    def get_current(self):
+        return self._current

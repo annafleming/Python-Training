@@ -2,7 +2,7 @@ import unittest
 from ..reinforcement.flower import Flower
 from ..reinforcement.credit_card import CreditCard
 from ..reinforcement.vector import Vector
-from ..reinforcement.progression import FibonacciProgression
+from ..reinforcement.progression import FibonacciProgression, DiffProgression
 from ..reinforcement.range import Range
 class ReinforcementExercisesTestCase(unittest.TestCase):
 
@@ -96,6 +96,12 @@ class ReinforcementExercisesTestCase(unittest.TestCase):
         self.assertTrue(25 in r)
         self.assertFalse(6 in r)
 
+    def test_should_generate_diff_progression(self):
+        progression = DiffProgression(10, 2)
+        progression.advance()
+        progression.advance()
+        progression.advance()
+        self.assertEqual(2, progression.get_current())
         #next C-2.31
 if __name__ == '__main__':
     unittest.main()
