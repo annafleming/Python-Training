@@ -55,3 +55,11 @@
         f(n) ≤ cg(n), for n ≥ n0
         ```
         `f(n) is big-Oh of g(n).`
+* Big-Omega
+    * Let f(n) and g(n) be functions mapping positive integers to positive real numbers.
+         We say that f(n) is Ω(g(n)), if g(n) is O(f(n)), that is, 
+         there is a real constant c > 0 and an integer constant n0 ≥ 1 such that
+         ```
+         f(n) ≥ cg(n), for n ≥ n0
+         ```
+         `f(n) is big-Omega of g(n)`
