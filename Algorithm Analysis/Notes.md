@@ -63,3 +63,11 @@
          f(n) ≥ cg(n), for n ≥ n0
          ```
          `f(n) is big-Omega of g(n)`
+         
+* Big-Theta        
+    * We say that f(n) is Θ(g(n)), if f(n) is O(g(n)) and f(n) is Ω(g(n)), that is, 
+        there are real constants c1> 0 and c2> 0, and an integer constant n0 ≥ 1 such that
+        ```
+          c1 * g(n) ≤ f(n) ≤ c2 * g(n)
+        ```
+        `f(n) is big-Theta of g(n)`
