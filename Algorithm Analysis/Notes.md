@@ -71,3 +71,59 @@
           c1 * g(n) ≤ f(n) ≤ c2 * g(n)
         ```
         `f(n) is big-Theta of g(n)`
+        
+## Algorithm Analysis
+```python
+    def find_max(data):
+        biggest = data[0] 
+        for val in data:
+            if val > biggest:
+            biggest = val
+        return biggest
+```
+* `len(data)` - O(1)
+* `data[0]` - O(1) - lists are implemented as array-based sequences, 
+    references to a list’s elements are stored in a consecutive block of memory
+* `find_max` - O(n) 
+
+##Prefix Averages
+* Quadratic-Time Algorithm
+    ```python
+        def prefix_average1(S):
+            n = len(S)
+            A = [0] * n
+            for j in range(n):
+                total = 0
+                for i in range(j + 1): 
+                    total += S[i]
+                A[j] = total / (j+1)
+            return A
+    ```
+    * `n = len(S)` - O(1)
+    * `A = [0] * n` - O(n)
+    * `total = 0` - O(n)
+    * `total += S[i]` - O(n^2)
+    * `A[j] = total / (j+1)` - O(n)
+     ```python
+        def prefix_average2(S):
+            n = len(S)
+            A = [0] * n
+            for j in range(n):
+                A[j] = sum(S[0:j+1]) / (j + 1)
+            return A
+    ```
+    * `A[j] = sum(S[0:j+1]) / (j + 1)` - O(n^2)
+    
+* Linear-Time Algorithm
+    ```python
+        def prefix_average3(S):
+            n = len(S)
+            A = [0] * n
+            total = 0
+            for j in range(n):
+                total += S[j]
+                A[j] = total / (j+1)
+            return A
+    ```
+    * `total += S[j]` - O(n)
+    * `A[j] = total / (j+1)` - O(n)
