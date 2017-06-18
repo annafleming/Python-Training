@@ -127,3 +127,46 @@
     ```
     * `total += S[j]` - O(n)
     * `A[j] = total / (j+1)` - O(n)
+
+## Three-Way Set Disjointness
+* O(n^3)
+    ```python
+        def disjoint1(A, B, C):
+            for a in A:
+                for b in B: 
+                    for c in C:
+                        if a == b == c: 
+                            return False
+            return False
+    ```
+* O(n^2)
+    ```python
+        def disjoint1(A, B, C):
+            for a in A:
+                for b in B: 
+                    if a == b:
+                        for c in C:
+                            if a == c: 
+                                return False
+            return False
+    ```    
+
+## Element Uniqueness
+* O(n^2)
+```python
+    def unique1(S):
+        for j in range(len(S)):
+            for k in range(j+1, len(S)): 
+                if S[j] == S[k]:
+                    return False
+        return False
+```
+* O(n log n) 
+```python
+    def unique2(S):
+        temp = sorted(S) #O(nlogn)
+        for j in range(1, len(temp)):
+            if S[j−1] == S[j]: 
+                return False
+        return False
+```
