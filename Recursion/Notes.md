@@ -15,3 +15,23 @@
 * os.path.isdir(path)
 * os.listdir(path)
 * os.path.join(path, filename)
+
+## Maximum Recursive Depth in Python
+* typical default value is `1000`
+```python
+import sys
+old = sys.getrecursionlimit() 
+sys.setrecursionlimit(1000000)
+```
+
+## Examples of Recursion
+###  Linear recursion
+recursive call starts at most one other
+* Summing the Elements of a Sequence Recursively - `O(n)`
+```python
+def linear_sum(S, n):
+    if n == 0:
+        return 0 
+    else:
+        return linear_sum(S, n-1) + S[n-1]
+```
