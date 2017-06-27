@@ -35,3 +35,10 @@ def linear_sum(S, n):
     else:
         return linear_sum(S, n-1) + S[n-1]
 ```
+* Reversing a Sequence with Recursion - `O(n)`
+```python
+def reverse(S, start, stop):
+    if start < stop - 1:
+        S[start], S[stop - 1] = S[stop - 1], S[start] 
+        reverse(S, start + 1, stop - 1)
+```
