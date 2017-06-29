@@ -42,3 +42,28 @@ def reverse(S, start, stop):
         S[start], S[stop - 1] = S[stop - 1], S[start] 
         reverse(S, start + 1, stop - 1)
 ```
+
+### Binary Recursion
+function makes two recursive calls
+* summing the n elements of a sequence
+```python
+def binary_sum(S, start, stop):
+    if start >= stop:
+        return 0
+    elif start == stop - 1:
+        return S[start]
+    else:
+        mid = (start + stop) // 2
+        return binary_sum(S, start, mid) + binary_sum(S, start, mid)
+```
+
+### Multiple Recursion
+function may make more than two recursive calls
+* analyzing the disk space usage of a file system
+
+## Designing Recursive Algorithms
+* `Test for base cases` - We begin by testing for a set of base cases (there should be at least one). These base cases should be defined so that every possible chain of recursive calls will eventually reach a base case, and the handling of each base case should not use recursion.
+* `Recur` - If not a base case, we perform one or more recursive calls.
+
+## Eliminating Tail Recursion
+_Tail recursion_ - a recursion is a tail recursion if any recursive call that is made from one context is the very last operation in that context, with the return value of the recursive call (if any) immediately returned by the enclosing recursion
