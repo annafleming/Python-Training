@@ -18,3 +18,9 @@ Array is storing the bits that represent the primary data (characters, in the ca
 
 Primary support for compact arrays is in a module named __array__
 ```primes = array( 'i' , [2, 3, 5, 7, 11, 13, 17, 19])``` - 'i' (signed int)
+
+##Dynamic Arrays and Amortization
+Python’s list class relies on a `dynamic array`. 
+Allocates initially more memory than need. Migrates to the new larger array as needed.
+
+##Amortized Analysis of Dynamic Arrays
