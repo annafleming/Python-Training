@@ -57,3 +57,14 @@ def has_more_vowels(word):
         current = 1 if word[0] in vowels else -1
         return current + has_more_vowels(word[1:])
 
+
+def sort_even_first(sequence):
+    sorted_seq = []
+    if len(sequence) >= 1:
+        if len(sequence) > 1:
+            sorted_seq = sort_even_first(sequence[1:])
+        if sequence[0] % 2 == 0:
+            sorted_seq.insert(0, sequence[0])
+        else:
+            sorted_seq.append(sequence[0])
+    return sorted_seq

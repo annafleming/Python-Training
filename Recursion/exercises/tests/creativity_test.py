@@ -61,5 +61,11 @@ class TowersOfHanoiExercisesTestCase(unittest.TestCase):
         self.assertEqual(creativity.has_more_vowels('acac'), 0)
         self.assertEqual(creativity.has_more_vowels('acacc'), -1)
 
+    def test_should_sort_sequence_so_even_go_first(self):
+        self.assertEqual(creativity.sort_even_first([1]), [1])
+        self.assertEqual(creativity.sort_even_first([1, 2]), [2, 1])
+        self.assertEqual(creativity.sort_even_first([1, 2, 3, 4]), [2, 4, 3, 1])
+
+
 if __name__ == '__main__':
     unittest.main()
