@@ -20,3 +20,14 @@ def moveDiscs(n, source, target, helper):
     return target
 
 
+def get_subsets(sequence):
+    subsets = []
+    if sequence:
+        element = sequence.pop()
+        subsets.append([element])
+        if sequence:
+            for j in get_subsets(sequence):
+                subsets.append(j)
+                subsets.append([element] + j)
+    return subsets
+
