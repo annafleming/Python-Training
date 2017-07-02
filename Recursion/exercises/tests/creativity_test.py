@@ -56,5 +56,10 @@ class TowersOfHanoiExercisesTestCase(unittest.TestCase):
         self.assertFalse(creativity.is_palindrome('raceca'))
         self.assertTrue(creativity.is_palindrome('raceecar'))
 
+    def test_should_define_more_vowels(self):
+        self.assertEqual(creativity.has_more_vowels('acaca'), 1)
+        self.assertEqual(creativity.has_more_vowels('acac'), 0)
+        self.assertEqual(creativity.has_more_vowels('acacc'), -1)
+
 if __name__ == '__main__':
     unittest.main()

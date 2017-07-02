@@ -48,3 +48,12 @@ def is_palindrome(word):
     else:
         return True
 
+
+def has_more_vowels(word):
+    vowels = ['a']
+    if len(word) == 1:
+        return 1 if word[0] in vowels else -1
+    else:
+        current = 1 if word[0] in vowels else -1
+        return current + has_more_vowels(word[1:])
+
