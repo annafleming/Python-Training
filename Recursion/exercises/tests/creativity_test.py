@@ -51,5 +51,10 @@ class TowersOfHanoiExercisesTestCase(unittest.TestCase):
     def test_should_reverse_a_string(self):
         self.assertEqual(creativity.reverse_string('pots&pans'), 'snap&stop')
 
+    def test_is_palindrome(self):
+        self.assertTrue(creativity.is_palindrome('racecar'))
+        self.assertFalse(creativity.is_palindrome('raceca'))
+        self.assertTrue(creativity.is_palindrome('raceecar'))
+
 if __name__ == '__main__':
     unittest.main()

@@ -39,3 +39,12 @@ def reverse_string(straight):
         return reverse_string(straight[1:]) + straight[0]
 
 
+def is_palindrome(word):
+    if len(word) > 1:
+        if word[0] != word[-1]:
+            return False
+        else:
+            return is_palindrome(word[1:-1])
+    else:
+        return True
+
