@@ -48,5 +48,8 @@ class TowersOfHanoiExercisesTestCase(unittest.TestCase):
         helper = []
         self.assertEqual(creativity.moveDiscs(len(source), source, target, helper), expected)
 
+    def test_should_reverse_a_string(self):
+        self.assertEqual(creativity.reverse_string('pots&pans'), 'snap&stop')
+
 if __name__ == '__main__':
     unittest.main()

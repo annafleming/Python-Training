@@ -31,3 +31,11 @@ def get_subsets(sequence):
                 subsets.append([element] + j)
     return subsets
 
+
+def reverse_string(straight):
+    if len(straight) == 1:
+        return straight
+    else:
+        return reverse_string(straight[1:]) + straight[0]
+
+
