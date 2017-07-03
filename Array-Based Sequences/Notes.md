@@ -23,4 +23,15 @@ Primary support for compact arrays is in a module named __array__
 Python’s list class relies on a `dynamic array`. 
 Allocates initially more memory than need. Migrates to the new larger array as needed.
 
-##Amortized Analysis of Dynamic Arrays
+## Efficiency of Python’s Sequence Types
+### Python’s List and Tuple Classes
+k - leftmost occurrence
+* `len(data)` - O(1)
+* `data[j]` - O(1)
+* `data.count(value)` - O(n)
+* `data.index(value)` - O(k+1)
+* `value in data` - O(k+1)
+* `data1 == data2` - O(k+1)
+* `data[j:k]` - O(k+1)
+* `data1 + data2` - O(n1+n2)
+* `c * data` - O(c*n)
