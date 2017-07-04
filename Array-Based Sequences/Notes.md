@@ -25,6 +25,7 @@ Allocates initially more memory than need. Migrates to the new larger array as n
 
 ## Efficiency of Python’s Sequence Types
 ### Python’s List and Tuple Classes
+##### Nonmutating behaviors
 k - leftmost occurrence
 * `len(data)` - O(1)
 * `data[j]` - O(1)
@@ -35,3 +36,16 @@ k - leftmost occurrence
 * `data[j:k]` - O(k+1)
 * `data1 + data2` - O(n1+n2)
 * `c * data` - O(c*n)
+
+##### Mutating behaviors
+* `data[j] = val` - O(1)
+* `data.append(value)` - O(1)∗
+* `data.insert(k, value)` - O(n−k+1)∗
+* `data.pop()` - O(1)∗
+* `data.pop(k); del data[k]` - O(n − k)∗
+* `data.remove(value)` - O(n)∗
+* `data1.extend(data2);data1 += data2` - O(n2 )∗
+* `data.reverse()` - O(n)
+* `data.sort()` - O(n log n)
+
+
