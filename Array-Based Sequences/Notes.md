@@ -46,6 +46,25 @@ k - leftmost occurrence
 * `data.remove(value)` - O(n)∗
 * `data1.extend(data2);data1 += data2` - O(n2 )∗
 * `data.reverse()` - O(n)
-* `data.sort()` - O(n log n)
+* `data.sort()` - O(n * log n)
 
+### Python’s String Class
 
+* Pattern matching - O(mn)
+    `__contains__, find, index, count, replace, and split`
+* Composing Strings
+    * O(n^2)
+    ```python
+    letters = ''
+    for c in document:
+        if c.isalpha():
+            letters += c
+    ```
+    * O(n)
+    ```python
+    temp = [ ]
+    for c in document:
+        if c.isalpha(): 
+            temp.append(c)
+    letters = ''.join(temp)
+    ```
