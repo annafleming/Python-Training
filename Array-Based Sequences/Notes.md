@@ -81,3 +81,9 @@ def insertion_sort(A):
             j-=1
         A[j] = cur    
 ```
+
+## Multidimensional Data Sets
+Initialize two-dimentional list
+```python
+data=[[0] c for j in range(r)]
+```
