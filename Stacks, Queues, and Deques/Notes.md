@@ -7,3 +7,19 @@ to the `last-in, first-out (LIFO) principle`.
 * `S.top()`
 * `S.is_empty()`
 * `len(S)`
+### An Algorithm for Matching Delimiters
+```python
+def is_matched(expr):
+    lefty = '({[' 
+    righty = ')}]'
+    S = ArrayStack() 
+    for c in expr:
+        if c in lefty: 
+            S.push(c)
+        elif c in righty:
+            if S.is_empty(): 
+                return False
+            if righty.index(c) != lefty.index(S.pop()):
+                return False
+    return S.is_empty()
+```
