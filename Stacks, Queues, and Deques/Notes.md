@@ -23,3 +23,13 @@ def is_matched(expr):
                 return False
     return S.is_empty()
 ```
+
+## Queues
+Queue is a collection of objects that are inserted and removed according to the 
+`first-in, first-out (FIFO)` principle.
+The queue abstract data type (ADT) supports the following two fundamental methods for a queue Q:
+* `Q.enqueue(e)`
+* `Q.dequeue()`
+* `Q.first()`
+* `Q.is_empty()`
+* `len(Q)`
