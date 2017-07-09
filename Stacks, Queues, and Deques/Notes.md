@@ -33,3 +33,6 @@ The queue abstract data type (ADT) supports the following two fundamental method
 * `Q.first()`
 * `Q.is_empty()`
 * `len(Q)`
+
+## Double-Ended Queues
+A queue-like data structure that supports insertion and deletion at both the front and the back of the queue.
