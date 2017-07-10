@@ -34,5 +34,16 @@ The queue abstract data type (ADT) supports the following two fundamental method
 * `Q.is_empty()`
 * `len(Q)`
 
-## Double-Ended Queues
+## Double-Ended Queues (deque)
 A queue-like data structure that supports insertion and deletion at both the front and the back of the queue.
+* `D.add first(e)`
+* `D.add last(e)`
+* `D.delete first()`
+* `D.delete last()`
+* `D.first()`
+* `D.last()`
+* `D.is_empty()`
+* `len(D)`
+
+### Deques in the Python Collections Module
+collections.deque
