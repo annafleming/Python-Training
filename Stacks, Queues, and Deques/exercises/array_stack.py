@@ -2,6 +2,10 @@ class Empty(Exception):
     pass
 
 
+class Full(Exception):
+    pass
+
+
 class ArrayStack:
     def __init__(self):
         self.data = []
