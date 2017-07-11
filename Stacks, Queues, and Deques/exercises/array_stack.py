@@ -1,9 +1,4 @@
-class Empty(Exception):
-    pass
-
-
-class Full(Exception):
-    pass
+from .custom_exceptions import Empty,Full
 
 
 class ArrayStack:
