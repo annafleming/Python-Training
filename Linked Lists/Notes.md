@@ -7,3 +7,10 @@ Each node stores a reference to an object that is an element of the sequence, as
 * Last node - `tail` (reference = None)
 
 ##Circularly Linked Lists
+
+### Round-Robin Schedulers
+It iterates through a collection of elements in a circular fashion and “services” each element 
+by performing a given action on it(used to allocate slices of CPU time).
+1. e = Q.dequeue() 
+2. Service element `e`
+3. Q.enqueue(e)
