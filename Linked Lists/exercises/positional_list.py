@@ -60,6 +60,9 @@ class PositionalList(_DoublyLinkedBase):
     def add_first(self, e):
         return self._insert_between(e, self._header, self._header._next)
 
+    def add_last(self, e):
+        return self._insert_between(e, self._trailer._prev, self._trailer)
+
     def add_before(self, p, e):
         original = self._validate(p)
         return self._insert_between(e, original._prev, original)
