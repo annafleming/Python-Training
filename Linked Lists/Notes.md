@@ -21,3 +21,25 @@ A linked list in which each node keeps an explicit reference to the node before 
 “Dummy” nodes also known as `sentinels` (or guards)
 * `header`
 * `trailer`
+
+## The Positional List ADT
+
+### The Positional List Abstract Data Type
+
+#### Position ADT
+* `p.element()` - Return the element stored at position `p`.
+
+#### Positional list ADT
+* `L.first()` - position of the first element
+* `L.last()`
+* `L.before(p)`
+* `L.after(p)`
+* `L.is_empty( )`
+* `len(L)`
+* `iter(L)` - Return a forward iterator for the elements of the list
+* `L.add_first(e)`
+* `L.add_last(e)`
+* `L.add_before(p, e)`
+* `L.add_after(p, e)`
+* `L.replace(p, e)`
+* `L.delete(p)`
