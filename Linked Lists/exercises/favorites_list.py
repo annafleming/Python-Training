@@ -3,7 +3,7 @@ from .positional_list import PositionalList
 class FavoritesList:
     __slots__ = '_value', '_count'
 
-    class Item:
+    class _Item:
         def __init__(self, e):
             self._value = e
             self._count = 0
@@ -33,10 +33,22 @@ class FavoritesList:
         return len(self._data) == 0
 
     def access(self, e):
-        pass
+        p = self._find_position(e)
+        if p is None:
+            p = self._data.add_last(self._Item(e))
+        p.element()._count += 1
+        self._move_up(p)
 
     def remove(self, e):
-        pass
+        p = self._find_position(e)
+        if p is not None:
+            self._data.delete(p)
 
     def top(self, k):
-        pass
+        if not 1 <= k <= len(self):
+            raise ValueError('Illegal value for k')
+        walk = self._data.first()
+        for j in range(k):
+            item = walk.element()
+            yield item._value
+            walk = self._data.after(walk)
