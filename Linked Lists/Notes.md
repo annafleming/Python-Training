@@ -62,3 +62,10 @@ def insertion_sort(L):
                 L.delete(pivot)
                 L.add_before(walk, value)
 ```
+
+## Case Study: Maintaining Access Frequencies
+Collection of elements while keeping track of the number of times each element is accessed.
+### Favorites list ADT
+* `access(e)`
+* `remove(e)`
+* `top(k)`
