@@ -69,3 +69,17 @@ Collection of elements while keeping track of the number of times each element i
 * `access(e)`
 * `remove(e)`
 * `top(k)`
+
+## Move-to-Front Heuristic
+Each time we access an element we move it all the way to the front of the list.
+
+## Link-Based vs. Array-Based Sequences
+### Advantages of Array-Based Sequences
+* Arrays provide O(1)-time access to an element based on an integer index. (`vs. O(k) in linked list`)
+* Operations with equivalent asymptotic bounds typically run a constant 
+factor more efficiently with an array-based structure versus a linked structure. 
+(instantiating and linking nodes in LinkedList)
+* Array-based representations typically use proportionally less memory than linked structures.
+### Advantages of Link-Based Sequences
+* Link-based structures provide worst-case time bounds for their operations.
+* Link-based structures support O(1)-time insertions and deletions at arbi- trary positions.
