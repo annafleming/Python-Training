@@ -1,5 +1,5 @@
 import unittest
-from .. import projects
+# from .. import projects
 
 
 class ProjectsExercisesTestCase(unittest.TestCase):
