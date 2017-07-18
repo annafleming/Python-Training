@@ -35,6 +35,35 @@ class LinkedQueue:
         else:
             self._tail.next = newest
         self._tail = newest
-        self._size = 0
+        self._size += 1
+
+    def __iter__(self):
+        if self.is_empty():
+            raise Exception('Queue is empty')
+        cursor = self._head
+        for i in range(len(self)):
+            yield cursor.element
+            cursor = cursor.next
+
+    def get_last_element(self):
+        if self.is_empty():
+            raise Exception('Queue is empty')
+        for index, node in enumerate(self):
+            if index == len(self) - 1:
+                return node
+
+    def get_first_node(self):
+        if self.is_empty():
+            raise Exception('Queue is empty')
+        return self._head
+
+    def _count_nodes(self, root_node):
+        if root_node is None:
+            return 0
+        else:
+            return 1 + self._count_nodes(root_node.next)
+
+
+
 
 
