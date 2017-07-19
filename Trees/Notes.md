@@ -25,6 +25,38 @@ element and zero or more `children` elements.
 * `iter(T)` - Generate an iteration of all elements stored within tree T.
 
 #### Height
+The height of a nonempty tree T is equal to the maximum of the depths of its leaf positions.
+```python
+def height(self, p):
+    if self.is_leaf(p):
+        return 0 
+    else:
+        return 1 + max(self.height(c) for c in self.children(p))
+```
+
+## Binary Trees
+A `binary tree` is an ordered tree with the following properties:
+* Every node has at most two children.
+* Each child node is labeled as being either a `left child` or a `right child`.
+* A left child precedes a right child in the order of children of a node.
+* A binary tree is `proper` if each node has either zero or two children.
+* Also known as `decision trees`.
+
+### The Binary Tree Abstract Data Type
+* `T.left(p)` - Return the position that represents the left child of p, or None if p has no left child.
+* `T.right(p)`
+* `T.sibling(p)`
+
+### Properties of Binary Trees
+* In general, level d has at most 2^d nodes.
+* nE = nI + 1
+
+## Implementing Trees
+
+
+
+
+
 
 
 
