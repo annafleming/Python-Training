@@ -42,3 +42,13 @@ class CircularQueue:
         if self.size > 0:
             self._tail = self._tail.next
 
+    def count_nodes(self):
+        if self.is_empty():
+            return 0
+        count = 1
+        walk = self._tail.next
+        while walk != self._tail:
+            count += 1
+            walk = walk.next
+        return count
+

@@ -1,6 +1,7 @@
 import unittest
 from .. import reiforcement
 from ..linked_queue import LinkedQueue
+from ..circular_queue import CircularQueue
 
 
 class ReinforcementExercisesTestCase(unittest.TestCase):
@@ -26,9 +27,11 @@ class ReinforcementExercisesTestCase(unittest.TestCase):
         L = reiforcement.populate_linked_list(LinkedQueue(), [1, 2, 3, 4, 5])
         self.assertEqual(reiforcement.recursively_count_nodes(L), 5)
 
+    def test_should_count_nodes_in_circularly_linked_list(self):
+        L = reiforcement.populate_linked_list(CircularQueue(), [1, 2, 3, 4, 5])
+        self.assertEqual(L.count_nodes(), 5)
 
-        #R-7.4 
-
+        # R-7.6
 
 
 
