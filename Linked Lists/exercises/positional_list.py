@@ -26,7 +26,6 @@ class PositionalList(_DoublyLinkedBase):
             raise ValueError('p is no longer valid')
         return p._node
 
-
     def _make_position(self, node):
         if node is self._header or node is self._trailer:
             return None

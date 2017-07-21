@@ -1,5 +1,6 @@
 from .tree import Tree
 
+
 class BinaryTree(Tree):
     def left(self, p):
         raise NotImplementedError('must be implemented by subclass')
