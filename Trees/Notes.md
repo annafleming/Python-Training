@@ -52,6 +52,12 @@ A `binary tree` is an ordered tree with the following properties:
 * nE = nI + 1
 
 ## Implementing Trees
+* `T.add_root(e)`
+* `T.add_left(p, e)` - Create a new node storing element e, link the node as the left child of position p
+* `T.add_right(p, e)`
+* `T.replace(p, e)` - Replace the element stored at position p with element e, and return the previously stored element.
+* `T.delete(p)` - Remove the node at position p, replacing it with its child, if any.
+* `T.attach(p, T1, T2)` - Attach the internal structure of trees T1 and T2, respec- tively, as the left and right subtrees of leaf position p of T
 
 
 
