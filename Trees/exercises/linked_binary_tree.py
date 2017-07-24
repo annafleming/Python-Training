@@ -43,6 +43,9 @@ class LinkedBinaryTree(BinaryTree):
         def __len__(self):
             return self._size
 
+        def is_empty(self):
+            return self._size == 0
+
         def root(self):
             return self._make_position(self._root)
 
@@ -66,6 +69,9 @@ class LinkedBinaryTree(BinaryTree):
             if node._right is not None:
                 count += 1
             return count
+
+        def is_leaf(self, p):
+            return self.num_children(p) == 0
 
         def _add_root(self, e):
             if self._root is not None:
@@ -97,9 +103,45 @@ class LinkedBinaryTree(BinaryTree):
             return old
 
         def _delete(self, p):
-            pass
+            node = self._validate(p)
+            if self.num_children(p) == 2:
+                raise ValueError('The node has two children')
+            child = node._left if node._left else node._right
+            if child is not None:
+                child._parent = node._parent
+            if node is self._root:
+                self._root = child
+            else:
+                parent = node._parent
+                if node is parent._left:
+                    parent._left = child
+                else:
+                    parent._right = child
+            self._size -= 1
+            node._parent = node
+            return node._element
 
+        # Attach the internal structure of trees T1 and T2, respec- tively, as the left and right subtrees of leaf
+        # position p of T, and reset T1 and T2 to empty trees; an error condition occurs if p is not a leaf.
         def _attach(self, p, t1, t2):
-            pass
+            node = self._validate(p)
+            if not self.is_leaf(p):
+                raise ValueError('Position must be leaf')
+            if not type(self) is type(t1) is type(t2):
+                raise TypeError('Tree types must match')
+            self._size += len(t1) + len(t2)
+            if not t1.is_empty():
+                t1._root._parent = node
+                node._left = t1._root
+                t1._root = None
+                t1._size = 0
+            if not t2.is_empty():
+                t2._root._parent = node
+                node._right = t2._root
+                t2._root = None
+                t2._size = 0
+
+
+
 
 
