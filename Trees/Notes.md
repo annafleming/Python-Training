@@ -75,6 +75,61 @@ arithmetic operations on the number f(p)
 * The space usage of an array-based representation depends greatly on the shape of the tree
 * Update operations for trees cannot be efficiently supported (deleting a node and promoting its child takes O(n) time).
 
+## Tree Traversal Algorithms
+A `traversal` of a tree T is a systematic way of accessing, or “visiting,” all the positions of T.
+
+### Preorder and Postorder Traversals of General Trees - O(n)
+#### Preorder traversal
+The root of T is visited first and then the subtrees rooted at its children are traversed recursively.
+```
+Algorithm preorder(T, p):
+    perform the “visit” action for position p 
+    for each child c in T.children(p) do
+        preorder(T, c)
+```
+
+#### Postorder traversal
+Tt recursively traverses the subtrees rooted at the children of the root first, and then visits the root.
+```
+Algorithm preorder(T, p):
+    for each child c in T.children(p) do
+        preorder(T, c)
+    perform the “visit” action for position p 
+```
+
+### Breadth-First Tree Traversal - O(n)
+We visit all the positions at depth d before we visit the positions at depth d + 1. 
+* Used in software for playing games. 
+```
+Algorithm breadthfirst(T):
+    Initialize queue Q to contain T.root() 
+    while Q not empty do
+        p = Q.dequeue()
+        perform the “visit” action for position p 
+        for each child c in T.children(p) do
+            Q.enqueue(c)
+```
+### Inorder Traversal of a Binary Tree
+We visit a position between the recursive traversals of its left and right subtrees.
+```
+Algorithm inorder(p):
+    if p has a left child lc then
+        inorder(lc)
+    perform the “visit” action for position p 
+    if p has a right child rc then
+        inorder(rc)
+```
+
+#### Binary Search Trees
+A binary search tree for S is a binary tree T such that, for each position p of T :
+* Position p stores an element of S, denoted as e(p).
+* Elements stored in the left subtree of p (if any) are less than e(p).
+* Elements stored in the right subtree of p (if any) are greater than e(p).
+* The running time of searching in a binary search tree T is proportional to the height of T
+
+### Implementing Tree Traversals in Python
+
+
 
 
 
