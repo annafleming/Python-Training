@@ -57,8 +57,23 @@ A `binary tree` is an ordered tree with the following properties:
 * `T.add_right(p, e)`
 * `T.replace(p, e)` - Replace the element stored at position p with element e, and return the previously stored element.
 * `T.delete(p)` - Remove the node at position p, replacing it with its child, if any.
-* `T.attach(p, T1, T2)` - Attach the internal structure of trees T1 and T2, respec- tively, as the left and right subtrees of leaf position p of T
+* `T.attach(p, T1, T2)` - Attach the internal structure of trees T1 and T2, respectively, as the left and right subtrees of leaf position p of T
 
+### Array-Based Representation of a Binary Tree
+An alternative representation of a binary tree T is based on a way of numbering the positions of T . 
+For every position p of T , let f ( p) be the integer defined as follows.
+* If p is the root of T,then f(p)=0.
+* If p is the left child of position q, then f(p) = 2f(q)+1
+* If p is the right child of position q, then f(p) = 2f(q)+2
+
+#### Advantages
+* One advantage of an array-based representation of a binary tree is that a position p can be represented by the single 
+integer f(p), and that position-based methods such as root, parent, left, and right can be implemented using simple 
+arithmetic operations on the number f(p)
+
+#### Disadvantages
+* The space usage of an array-based representation depends greatly on the shape of the tree
+* Update operations for trees cannot be efficiently supported (deleting a node and promoting its child takes O(n) time).
 
 
 
