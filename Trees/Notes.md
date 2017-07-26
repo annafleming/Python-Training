@@ -100,6 +100,7 @@ Algorithm preorder(T, p):
 ### Breadth-First Tree Traversal - O(n)
 We visit all the positions at depth d before we visit the positions at depth d + 1. 
 * Used in software for playing games. 
+* Relies on a queue of positions to manage the traver- sal process.
 ```
 Algorithm breadthfirst(T):
     Initialize queue Q to contain T.root() 
@@ -128,10 +129,73 @@ A binary search tree for S is a binary tree T such that, for each position p of 
 * The running time of searching in a binary search tree T is proportional to the height of T
 
 ### Implementing Tree Traversals in Python
+T should include support for the following methods:
+* `T.positions()` - Generate an iteration of all _positions_ of tree T.
+* `iter(T)` - Generate an iteration of all _elements_ stored within tree T.
+```python
+def __iter__(self):
+    for p in self.positions():
+        yield p.element() 
+```
+#### Preorder Traversal
+```python
+def preorder(self):
+    if not self.is_empty():
+        for p in self._subtree_preorder(self.root()): 
+            yield p
+def _subtree_preorder(self, p):
+    yield p
+    for c in self.children(p):
+        for other in self._subtree_preorder(c): 
+            yield other
+```
 
+#### Postorder Traversal
+```python
+def postorder(self):
+    if not self.is_empty():
+        for p in self._subtree_postorder(self.root()): 
+            yield p
+def _subtree_postorder(self, p):
+    for c in self.children(p):
+        for other in self._subtree_postorder(c): 
+            yield other
+    yield p
+```
 
+#### Breadth-First Traversal
+```python
+def breadthfirst(self):
+    if not self.is_empty():
+    fringe = LinkedQueue()
+    fringe.enqueue(self.root())
+    while not fringe.is_empty():
+        p = fringe.dequeue()
+        yield p
+        for c in self.children(p):
+            fringe.enqueue(c)
+```
 
+#### Inorder Traversal for Binary Trees
+```python
+def _subtree_inorder(self, p):
+    if self.left(p) is not None:
+        for other in self._subtree_inorder(p):
+            yield other
+    yield p
+    if self.right(p) is not None:
+        for other in self._subtree_inorder(p):
+            yield other
+```
+### Applications of Tree Traversals
+* Table of Contents
+```python
 
+```
+* Parenthetic Representations of a Tree
+```python
+
+```
 
 
 
