@@ -190,13 +190,34 @@ def _subtree_inorder(self, p):
 ### Applications of Tree Traversals
 * Table of Contents
 ```python
-
+def preorder_indent(T, p, d):
+    print(2 * d * ' ' + str(p.element())) 
+    for c in T.children(p):
+        preorder_indent(T, c, d+1)
+        
+def preorder_label(T, p, d, path):
+    label = '.'.join(str(j+1) for j in path)
+    print(2 * d * ' '+ label, p.element())
+    path.append(0)
+    for c in T.children(p):
+        preorder_label(T, c, d+1, path)
+        path[−1] += 1
+    path.pop()
 ```
 * Parenthetic Representations of a Tree
-```python
+* Computing Disk Space
 
+### Euler Tours and the Template Method Pattern
+The Euler tour traversal of a general tree T can be informally defined as a “walk” around T, 
+where we start by going from the root toward its leftmost child, viewing the edges of T as 
+being “walls” that we always keep to our left. 
 ```
-
+Algorithm eulertour(T, p):
+    perform the “pre visit” action for position p 
+    for each child c in T.children(p) do
+        eulertour(T, c)
+    perform the “post visit” action for position p
+```
 
 
 
