@@ -38,10 +38,19 @@ class PreorderPrintIndentedLabeledTour(EulerTour):
         label  = '.'.join([str(j+1) for j in path])
         print(2 * d * ' ' + label, p.element())
 
-# class BinaryEulerTour(EulerTour):
-#     def _tour(self, p, d, path):
-#         pass
-#
-#     def _hook_invisit(self, p, d, path):
-#
-#     pass
+
+class BinaryEulerTour(EulerTour):
+    def _tour(self, p, d, path):
+        results = [None, None]
+        if self._tree.left(p):
+            path.append(0)
+            results[0] = self._tour(self._tree.left(p), d + 1, path)
+        self._hook_invisit(p, d, path)
+        if self._tree.right(p):
+            path.append(1)
+            results[1] = self._tour(self._tree.right(p), d + 1, path)
+        answer = self._hook_postvisit(p, d, path, results)
+        return answer
+
+    def _hook_invisit(self, p, d, path):
+        return True
