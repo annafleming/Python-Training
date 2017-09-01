@@ -30,3 +30,25 @@ or as the leftmost position of a new level, if the bottom level is already full 
 * If p is the root of T,then f(p)=0.
 * If p is the left child of position q, then f(p) = 2f(q)+1.
 * If p is the right child of position q, then f(p) = 2f(q)+2.
+
+### Python’s heapq Module
+* `heappush(L, e)` - Push element e onto list L and restore the heap-order property.
+* `heappop(L)` - Pop and return the element with smallest value from list L, and reestablish the heap-order property.
+* `heappushpop(L, e)` - Push element e on list L and then pop and return the smallest item.
+* `heapreplace(L, e)`
+* `heapify(L)`
+* `nlargest(k, iterable)`
+* `nsmallest(k, iterable)`
+
+## Sorting with a Priority Queue
+### Selection-Sort and Insertion-Sort
+* `Selection-Sort` - using Unsorted Priority Queue, the bottleneck computation is the repeated “selection” of the minimum element - O(n2)
+* `Insertion-Sort` - using  Sorted Priority Queue, the bottleneck computation is adding the items - O(n2)
+
+### Heap-Sort
+O(n log n)
+
+## Adaptable Priority Queues
+* `P.update(loc, k, v)` - Replace key and value for the item identified by locator `loc`.
+* `P.remove(loc)` - Remove the item identified by locator `loc` from the priority
+queue and return its (key,value) pair.

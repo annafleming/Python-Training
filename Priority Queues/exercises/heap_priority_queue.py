@@ -5,7 +5,7 @@ class HeapPriorityQueue(PriorityQueueBase):
         return (j - 1) // 2
 
     def _left(self, j):
-        return 2*j + 1
+        return 2*j + 1e
 
     def _right(self, j):
         return 2 * j + 2
